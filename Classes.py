@@ -14,20 +14,27 @@ class Car(object):
         self.wheels = w
         self.doors = d
         self.color = ""
+        self.horse_power = 0
+
     def paint(self, c): #this is a "setter"
         self.color = c
+
+    def set_hp(self,hp):
+        self.horse_power= hp
+
     def get_color(self):
         return self.color
     
 
     def __str__(self): #used when we call print() on our Class object
-        return "This car has "+str(self.wheels)+"wheels and "+str(self.doors)+"doors"\
-                "and the color is "+str(self.color)
+        return "This car has "+str(self.wheels)+" wheels and "+str(self.doors)+"doors"\
+                "and the color is "+str(self.color)+" and hp:"+str(self.horse_power)
 
     def __eq__(self, other):
         if self.wheels == other.wheels and \
             self.color == other.color and \
-            self.doors == other.doors:
+            self.doors == other.doors and \
+            self.horse_power == other.horse_power:
             return True
         else:
             return False
@@ -37,8 +44,11 @@ class Car(object):
 mycar = Car(4, 2)
 yourcar = Car(4,2)
 
-yourcar.paint("black")
+yourcar.paint("red")
 mycar.paint("red") #setter
+
+mycar.set_hp(100)
+yourcar.set_hp(100)
 
 print(mycar)
 print(yourcar)
