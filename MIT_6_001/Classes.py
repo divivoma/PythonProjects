@@ -8,9 +8,9 @@ Created on Sun Jan  7 17:27:11 2018
 
 #Class definition in Python
 
-class Car(object):
+class Car(object):      
     def __init__(self, w, d):
-        self.name = None #self.name is always pre-defined 
+        self.name = None 
         self.wheels = w
         self.doors = d
         self.color = ""
